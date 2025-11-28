@@ -53,7 +53,7 @@ const getAllBlogs = async (
   }
 
   // Category filter
-  if (category && category !== "all") {
+  if (category) {
     query.category = { $regex: category, $options: "i" };
   }
 

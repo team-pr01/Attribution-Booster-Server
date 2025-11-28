@@ -47,7 +47,7 @@ const getAllBlogs = (keyword, category) => __awaiter(void 0, void 0, void 0, fun
         ];
     }
     // Category filter
-    if (category && category !== "all") {
+    if (category) {
         query.category = { $regex: category, $options: "i" };
     }
     const blogs = yield blog_model_1.default.find(query).sort({ createdAt: -1 });
