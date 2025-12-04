@@ -7,12 +7,15 @@ dotenv.config();
 export const sendEmail = async (to: string, subject:string, html: string) => {
   try {
     const transporter = nodemailer.createTransport({
-      service: "gmail",
-     auth: {
-        user: config.smtp_email,
-        pass: config.smtp_pass,
-      },
-    });
+  host: "smtp.gmail.com",
+  port: 465,
+  secure: true, // SSL
+  auth: {
+    user: config.smtp_email,
+    pass: config.smtp_pass,
+  },
+});
+
 
     await transporter.sendMail({
       from: config.smtp_email,
