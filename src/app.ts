@@ -14,7 +14,7 @@ app.use(cookieParser());
 app.use(express.json());
 
 // app.use(express.static("./uploads"));
-app.use(cors({ origin: ['http://localhost:3000', 'https://attribution-booster-dusky.vercel.app', 'https://www.attributionbooster.com'], credentials: true }));
+app.use(cors({ origin: ['http://localhost:3000', 'https://attribution-booster-frontend.netlify.app', 'https://www.attributionbooster.com'], credentials: true }));
 
 // Root route
 app.get('/', (req, res) => {
